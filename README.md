@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🤖 ULTRON.OS</h1>
+  <h1> ULTRON.OS</h1>
   <p><i>A next-generation AI interface powered by Google Gemini 2.5 Flash</i></p>
 
   ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)

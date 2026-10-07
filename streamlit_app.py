@@ -146,11 +146,13 @@ components.html(
 st.title("ULTRON.OS")
 st.markdown("<p style='text-align: center; color: #ff0000; font-family: monospace;'>SYSTEM INITIALIZED. AWAITING DIRECTIVE.</p>", unsafe_allow_html=True)
 
-api_key = st.text_input("ENTER GEMINI API KEY", type="password")
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+except KeyError:
+    st.error("SYSTEM ERROR: GEMINI_API_KEY NOT FOUND IN SECRETS.")
+    st.stop()
 
-if not api_key:
-    st.info("AWAITING CREDENTIALS. PLEASE INPUT YOUR GEMINI API KEY.")
-else:
+if True:
     genai.configure(api_key=api_key)
     # Using Gemini 2.5 Flash
     model = genai.GenerativeModel('gemini-2.5-flash')
